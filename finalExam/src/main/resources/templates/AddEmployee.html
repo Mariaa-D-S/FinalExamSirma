@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Add Employee</h2>
+
+<form action="/add" method="post" th:object="${employee}">
+  <label for="empId">Employee ID:</label>
+  <input type="text" id="empId" name="empId" th:field="*{empId}" required><br>
+
+    <div th:if="${errorMessage}" class="error">
+        <p th:text="${errorMessage}"></p>
+    </div>
+
+  <button type="submit">Add Employee</button>
+    <div>
+        <a href="/">Back To Home Page</a>
+    </div>
+</form>
+
+</body>
+</html>
