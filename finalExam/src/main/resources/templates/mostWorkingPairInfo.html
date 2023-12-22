@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Most Worked Pair</h1>
+<p th:text="${visualizationData['Employees']}"></p>
+<p th:text="'Total Days Worked: ' + ${visualizationData['TotalDays']}"></p>
+
+<h2>Projects</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Project ID</th>
+        <th>Days</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="project : ${visualizationData['Projects']}">
+        <td th:text="${project['ProjectID']}"></td>
+        <td th:text="${project['Days']}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
